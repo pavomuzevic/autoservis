@@ -1,0 +1,20 @@
+document.getElementById("forma").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let ime = document.getElementById("ime").value;
+    let email = document.getElementById("email").value;
+
+    if (ime === "" || email === "") {
+        alert("Popunite sva polja!");
+        return;
+    }
+
+    let podaci = {
+        ime: ime,
+        email: email
+    };
+
+    localStorage.setItem("kontakt", JSON.stringify(podaci));
+
+    alert("Podaci spremljeni!");
+});
